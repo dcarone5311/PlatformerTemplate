@@ -10,7 +10,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{BA4581A1-4125-F419-DFE1-DA333E5732D6}</ProjectGuid>
+    <ProjectGuid>{14EF0110-65EE-35FC-3C67-81ACDB99D5E1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -93,7 +93,6 @@
     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\BuildManager.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\2- Basic Movement and Gravity\Scripts\MyCharacterController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Examples\Scripts\Teleporter.cs" />
-    <Compile Include="Assets\AnimatorController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\3- Jumping\Scripts\c- Wall Jumping\MyCharacterController.cs" />
     <Compile Include="Assets\KinematicCharacterController\Core\KCCSettings.cs" />
     <Compile Include="Assets\KinematicCharacterController\Walkthrough\8- Creating a moving platform\Scripts\MyPlayer.cs" />
@@ -888,27 +887,31 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Unity.Timeline.Player.csproj">
-      <Project>{D0AFF2A4-28B9-76C0-26A0-A2B4D6CC0ED8}</Project>
+      <Project>{7D61C167-E3E8-1F3D-A52F-CF00EFA7B902}</Project>
       <Name>Unity.Timeline.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
-      <Project>{709407CF-4B7F-47E5-69D7-3CF142086E31}</Project>
+      <Project>{A7CC630C-1298-CC0F-57F2-17F6ABF790C5}</Project>
       <Name>UnityEngine.UI.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
-      <Project>{A6305849-3FE9-698A-A02C-B54BE8D8D07F}</Project>
+      <Project>{DE9E13E7-27AF-AFAA-6D01-2FBF689DE4B6}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Core.Player.csproj">
-      <Project>{CEFB3A8D-7DAF-5E36-22C9-C329CD12CFBE}</Project>
+      <Project>{5166F116-5D2E-115D-CDFA-1895FA6E103D}</Project>
       <Name>Unity.VisualScripting.Core.Player</Name>
     </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Player.csproj">
+      <Project>{9A0ECBA6-29F8-2BFC-B7D6-D4B992500205}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Player</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.State.Player.csproj">
-      <Project>{790E0C2F-6A90-412C-826C-4E873BF45F2E}</Project>
+      <Project>{DBDE4F27-8193-3D95-B22E-F26A8148FF05}</Project>
       <Name>Unity.VisualScripting.State.Player</Name>
     </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.Player.csproj">
-      <Project>{C5E1F49B-3435-B6CF-DA11-809862811C63}</Project>
+      <Project>{29D57295-C622-82C0-9F03-29122921BB45}</Project>
       <Name>Unity.VisualScripting.Flow.Player</Name>
     </ProjectReference>
   </ItemGroup>

@@ -27,7 +27,7 @@ public class PlayerController: MonoBehaviour
     Vector3 lastPlatformPos = Vector3.zero;
 
     public float dist=1.1f;
-
+    bool jumping;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +40,7 @@ public class PlayerController: MonoBehaviour
         animator = GetComponentInChildren<Animator>();
 
         stick = false;
+        jumping = false;
 
     }
 
@@ -89,7 +90,7 @@ public class PlayerController: MonoBehaviour
 
 
 
-        if (controller.isGrounded || stick)
+        if ((controller.isGrounded || stick) && !jumping)
         {
 
             verticalSpeed = -downForce;
@@ -112,6 +113,7 @@ public class PlayerController: MonoBehaviour
             {
                 verticalSpeed = jumpHeight;
                 animator.SetTrigger("Jump");
+                StartCoroutine(KeepJump());
             }
 
         }
@@ -123,6 +125,13 @@ public class PlayerController: MonoBehaviour
 
         }
 
+
+
+        if (Physics.SphereCast(transform.position,0.5f, Vector3.up, out hit, dist-0.5f))
+        {
+            verticalSpeed = -5f;
+
+        }
 
 
         if (input != Vector3.zero)
@@ -166,5 +175,14 @@ public class PlayerController: MonoBehaviour
 
 
         Gizmos.DrawSphere(transform.position + (dist - 0.5f) * Vector3.down, 0.5f);
+    }
+
+    IEnumerator KeepJump()
+    {
+        jumping = true;
+        yield return new WaitForSeconds(0.2f);
+        jumping = false;
+        yield return null;
+
     }
 }
