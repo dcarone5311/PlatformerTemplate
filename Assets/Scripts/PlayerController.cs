@@ -13,6 +13,7 @@ public class PlayerController: MonoBehaviour
     public float snap;
     public float turnSpeed;
     public float downForce;
+    public float boostForce;
 
     float verticalSpeed;
     CharacterController controller;
@@ -29,6 +30,11 @@ public class PlayerController: MonoBehaviour
     public float dist=1.1f;
     bool jumping;
 
+    [HideInInspector]
+    public bool jetPack;
+
+    Vector3 targetLook;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +47,7 @@ public class PlayerController: MonoBehaviour
 
         stick = false;
         jumping = false;
+        jetPack = false;
 
     }
 
@@ -119,51 +126,70 @@ public class PlayerController: MonoBehaviour
         }
         else
         {
-            Debug.Log("Falling");
+            
             verticalSpeed -= gravity * Time.deltaTime;
             animator.SetTrigger("Falling");
+            
+
 
         }
 
 
 
-        if (Physics.SphereCast(transform.position,0.5f, Vector3.up, out hit, dist-0.5f))
+        if (Physics.SphereCast(transform.position, 0.5f, Vector3.up, out hit, dist-0.5f))
         {
             verticalSpeed = -5f;
 
         }
 
 
-        if (input != Vector3.zero)
-            child.rotation = Quaternion.Slerp(child.rotation, Quaternion.LookRotation(input), snap * Time.deltaTime);
+
 
         animator.SetBool("isGrounded", controller.isGrounded || stick);
 
 
-        /*
-        if (stick && platform != null && controller.isGrounded)
+  
+        if(jetPack && !(controller.isGrounded || stick) && Input.GetKey(KeyCode.Space))
         {
-            //Debug.Log(platform.GetComponent<PlatformMovement>().move);
-            Debug.Log("Plat");
-            controller.Move((platform.GetComponentInParent<PlatformMovement>().move + input.normalized * speed + Vector3.up * verticalSpeed) * Time.deltaTime);
-            
+            if(input == Vector3.zero)
+            {
+                
+                verticalSpeed += boostForce * Time.deltaTime;
+                targetLook = input.normalized;
+            }
+
+            else
+            {
+                verticalSpeed += boostForce * Time.deltaTime * 0.8f;
+                controller.Move((input.normalized * boostForce * 0.6f) * Time.deltaTime);
+                targetLook = input.normalized + Vector3.down * 0.6f;
+            }
+
+             
         }
+
         else
         {
+            controller.Move(platMove);
+            controller.Move((input.normalized * speed ) * Time.deltaTime);
+            targetLook = input;
 
-            controller.Move((input.normalized * speed + Vector3.up * verticalSpeed) * Time.deltaTime);
-            Debug.Log("OFF");
         }
-        */
-        controller.Move(platMove);
-        controller.Move((input.normalized * speed + Vector3.up * verticalSpeed) * Time.deltaTime);
+        if (input != Vector3.zero)
+            child.rotation = Quaternion.Slerp(child.rotation, Quaternion.LookRotation(targetLook), snap * Time.deltaTime);
+        else
+        {
+            child.rotation = Quaternion.Slerp(child.rotation, Quaternion.LookRotation(child.forward-Vector3.up * child.forward.y), snap * Time.deltaTime);
+        }
+        verticalSpeed = Mathf.Clamp(verticalSpeed, -15f, 15f); //max and min vert speed
+        controller.Move(Vector3.up * verticalSpeed * Time.deltaTime);
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * turnSpeed * Time.deltaTime);
 
         //ignore ISGROUNDED WHEN STICKING TO PLAT
 
 
 
-        
+
 
     }
 
@@ -171,10 +197,10 @@ public class PlayerController: MonoBehaviour
     {
         Gizmos.color = Color.yellow;
 
-        Gizmos.DrawLine(transform.position, transform.position + dist * Vector3.down);
+        //Gizmos.DrawLine(transform.position, transform.position + dist * Vector3.down);
 
 
-        Gizmos.DrawSphere(transform.position + (dist - 0.5f) * Vector3.down, 0.5f);
+        //Gizmos.DrawSphere(transform.position + (dist - 0.5f) * Vector3.down, 0.5f);
     }
 
     IEnumerator KeepJump()
@@ -185,4 +211,5 @@ public class PlayerController: MonoBehaviour
         yield return null;
 
     }
+
 }

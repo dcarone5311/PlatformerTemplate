@@ -19,6 +19,8 @@ public class CarController : MonoBehaviour
     bool isDriving;
     bool isGrounded;
 
+    bool display;
+
     public float detectionDist;
 
     public Transform[] wheels;
@@ -31,6 +33,7 @@ public class CarController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.centerOfMass = new Vector3(0, -0.5f, 0); // lower center of mass to reduce rolling
         isDriving = false;
+        display = false;
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
@@ -42,14 +45,20 @@ public class CarController : MonoBehaviour
         else if (Vector3.Distance(player.position, transform.position) < 3f )
         {
 
-            enterText.enabled = true;
-            if(Input.GetKeyDown(KeyCode.E))
+            //enterText.enabled = true;
+            display = true;
+
+            if (Input.GetKeyDown(KeyCode.E))
                 VehicleEnter();
         }
         else
-            enterText.enabled = false;
+        {
+            display = false;
+            //enterText.enabled = false;
+        }
+            
 
-        Debug.Log(Vector3.Dot(Vector3.forward, rb.velocity));
+        
 
         foreach (Transform t in wheels)
         {
@@ -68,6 +77,14 @@ public class CarController : MonoBehaviour
 
         if (isDriving && isGrounded)
             Control();
+
+    }
+
+    void OnGUI()
+    {
+
+        if (display)
+            GUI.Label(new Rect(10, 10, 3000, 200), "Press 'E' to Enter Vehicle");
 
     }
 
