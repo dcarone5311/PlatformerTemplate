@@ -3,7 +3,19 @@
   "WorkspaceRootPath": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|c:\\users\\domin\\documents\\carone stem academy\\vgdc\\project templates\\platformertemplate\\assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|solutionrelative:assets\\bullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\assets\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|solutionrelative:assets\\playertank.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|c:\\users\\domin\\documents\\carone stem academy\\vgdc\\project templates\\platformertemplate\\assets\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|solutionrelative:assets\\enemyai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C86C8313-649F-C938-EA7B-7AF67BC5F70E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,20 +26,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyAI.cs",
+              "DocumentMoniker": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\EnemyAI.cs",
+              "RelativeDocumentMoniker": "Assets\\EnemyAI.cs",
+              "ToolTip": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\EnemyAI.cs",
+              "RelativeToolTip": "Assets\\EnemyAI.cs",
+              "ViewState": "AgIAAGIAAAAAAAAAAAAiwDcAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T02:04:36.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerTank.cs",
+              "DocumentMoniker": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\PlayerTank.cs",
+              "RelativeDocumentMoniker": "Assets\\PlayerTank.cs",
+              "ToolTip": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\PlayerTank.cs",
+              "RelativeToolTip": "Assets\\PlayerTank.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-14T00:15:48.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Bullet.cs",
+              "DocumentMoniker": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\Bullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Bullet.cs",
+              "ToolTip": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\Bullet.cs",
+              "RelativeToolTip": "Assets\\Bullet.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAwCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T23:44:39.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "CarController.cs",
               "DocumentMoniker": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\Scripts\\CarController.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CarController.cs",
               "ToolTip": "C:\\Users\\domin\\Documents\\Carone STEM Academy\\VGDC\\Project Templates\\PlatformerTemplate\\Assets\\Scripts\\CarController.cs",
               "RelativeToolTip": "Assets\\Scripts\\CarController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-02T15:52:36.055Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-02T15:52:36.055Z"
             }
           ]
         }
